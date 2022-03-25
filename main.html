@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href='/css/reset.css' rel='stylesheet'>
+  <script type='text/javascript'> 
+    $(document).ready(function(){
+      // 월 정렬 
+      let monthList = "";
+      for (i = 1; i <= 12; i++) {
+        monthList += "<li>" + i + "</li>"
+      }
+      $("ul.month").html(monthList);
+      // 월 클릭 이벤트
+      $("ul.month li").on("click", function () {
+        $("ul.month li").removeClass("on");
+        $(this).addClass("on");
+      });
+
+    });
+  </script>
+  <style>
+    body { overflow-x: auto; overflow-y: hidden; }
+    /* 퍼블리싱 구조 잡는 용도 */
+    div { border:1px dotted #aaaaaa }
+
+    #wrap { height:100vh; min-width:1200px;}
+    #wrap div.header { height:20vh; }
+    #wrap div.header .year { font-weight:700; font-size:40px; }
+    #wrap div.header ul.month li { display:inline-block; width:48px; height:48px; margin-right:16px; border:1px solid #CCCCCC; border-radius:50px; color:#cccccc; font-size:20px; text-align: center; line-height: 48px; cursor:pointer; }
+    #wrap div.header ul.month li.on { border:1px solid #96B7FB; background:#96B7FB; color:#ffffff; }
+    
+  </style>
+</head>
+<body>
+  <div id='wrap'>
+    <div class='header'>
+      <!-- header 영역 -->
+      <span class='profile'><img src='/images/profile.png'></span><span class='year'>2022</span>
+      <ul class='month'></ul>
+    </div>
+    <div class='content'>
+      content 영역
+    </div>
+  </div>
+</body>
+</html>

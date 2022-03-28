@@ -16,14 +16,22 @@
   <link href='./css/reset.css' rel='stylesheet'>
   <link href='./css/common.css' rel='stylesheet'>
   <script type='text/javascript'>
-    $(document).ready(function () {
-
+    $(document).ready(function(){
+      $('body').on('click', function () {
+        var width = window.innerWidth;
+        if (width > 900) {
+          location.href = './pc/main.html'
+        } else {
+          location.href = './mobile/onboarding_01.html';
+        }
+      });
     });
   </script>
 </head>
 
 <body>
-  <div id='wrap'>
+  <div id='wrap' class='splash'>
+    <img src='./images/logo.png'>
   </div>
 </body>
 

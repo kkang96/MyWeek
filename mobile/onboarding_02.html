@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta property='og:url' />
+  <meta property='og:type' content='app'/>
+  <meta property='og:image' content='../images/thumbnail.png'/>
+  <meta property='og:title' content='마이위크'/>
+  <meta property='og:description'/>
+  <title>마이위크</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <link href='../css/reset.css' rel='stylesheet'>
+  <link href='../css/style_mobile.css' rel='stylesheet'>
+  <script type='text/javascript'>
+    $(document).ready(function () {
+      $('#privacy').on('click', function () {
+        if ($(this).is(':checked')) {
+          $('input[name=privacy]').prop('checked', true);
+          $('.btn_next').addClass('on');
+        } else {
+          $('input[name=privacy]').prop('checked', false);
+          $('.btn_next').removeClass('on');
+        }
+      });
+
+      $('#privacy_01, #privacy_02').on('click', function () {
+        if ($('#privacy_01').is(':checked') && $('#privacy_02').is(':checked')) {
+          $('#privacy').prop('checked', true);
+          $('.btn_next').addClass('on');
+        } else {
+          $('#privacy').prop('checked', false);
+          $('.btn_next').removeClass('on');
+        }
+      });
+    });
+  </script>
+  <style>
+    #wrap { height:100vh; overflow:hidden; }
+    #wrap .contents { height:65vh; padding:24px; }
+    #wrap .contents div { margin-top:35%; font-size:20px; }
+    #wrap .contents div img { width:68px; height:40px; margin-bottom:16px; }
+    #wrap .contents div p { margin-top:8px; font-size:14px; }
+    #wrap .bottom { width:100%; height:35vh; padding:16px; }
+    #wrap .bottom label { display:inline-block; width:90%; height:48px; line-height:48px; }
+    #wrap .bottom input#privacy + label { width:100%; border-bottom:1px solid #cccccc; }
+    #wrap .bottom input#privacy_01 + label,
+    #wrap .bottom input#privacy_02 + label { margin-left:22px }
+    #wrap .bottom input[type="checkbox"] { display:none; }
+    #wrap .bottom input[type="checkbox"] + label:before {
+      content:""; 
+      display:inline-block;
+      position:relative;
+      top:4px;
+      width:20px; height:20px;
+      margin-right:18px;
+      background:url(../images/check_off.png) center center no-repeat;
+      background-size:100%;
+      z-index:1;
+    }
+    #wrap .bottom input[type="checkbox"]:checked + label:before {
+      content:"";
+      display:inline-block;
+      position:relative;
+      top:4px;
+      width:20px; height:20px;
+      margin-right:18px;
+      background:url(../images/check_on.png) center center no-repeat;
+      background-size:100%;
+      z-index:1;
+    }
+    #wrap .bottom img { position:relative; top:15px; left:-8px; width:8px; }
+    #wrap .bottom .btn_next { display:inline-block; width:100%; height:40px; margin-top:12px; background:#CCCCCC; color:#FFFFFF; border-radius:4px; text-align:center; line-height:40px; cursor:pointer; }
+    #wrap .bottom .btn_next.on { background:#497DDF; }
+  </style>
+</head>
+<body>
+  <div id='wrap'>
+    <div class='contents'>
+      <div>
+        <img src='../images/logo.png'><br>
+        서비스 이용동의 <br>
+        <p>마이위크의 편리한 서비스 이용을 위해 <br> 
+        약관에 동의해 주세요.</p>
+      </div>
+    </div>
+    <div class='bottom'>
+      <input type='checkbox' id='privacy' name='privacy' value='privacy_all'/><label for='privacy'>약관 전체동의</label>
+      <input type='checkbox' id='privacy_01' name='privacy' value='privacy_01'/><label for='privacy_01'>서비스 이용약관 (필수)</label><img src='../images/button_detail.png'>
+      <input type='checkbox' id='privacy_02' name='privacy' value='privacy_01'/><label for='privacy_02'>개인정보 수집 및 이용동의 (필수)</label><img src='../images/button_detail.png'>
+      <span class='btn_next'>다음</span>
+    </div>
+  </div>
+</body>
+</html>

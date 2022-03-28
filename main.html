@@ -10,12 +10,14 @@
   <link href="./css/common.css" rel="stylesheet">
   <script type="text/javascript"> 
     $(document).ready(function(){
+
       // 월 정렬 
       let monthList = "";
       for (i = 1; i <= 12; i++) {
         monthList += "<li>" + i + "</li>"
       }
       $("ul.month").html(monthList);
+
       // 월 클릭 이벤트
       $("ul.month li").on("click", function () {
         $("ul.month li").removeClass("on");
@@ -23,7 +25,9 @@
         $(this).addClass("on");
       });
 
+      // 할일 입력 팝업 노출
       $("div.text").click(function () {
+        // 클릭 한 날의 날짜 불러오기
         var year = $(".year").text();
         var date = $(this).parent("td").find(".date span:first-child").text();
         var day = $(this).parent("td").find(".date .day").text();
@@ -36,6 +40,12 @@
         $("#popup").fadeIn();
       });
 
+      // div.text와 input[type=checkbox] 중복 이벤트 발생 막기
+      $(".text span.eventPrevent").on("click", function(event){
+        event.stopPropagation();
+      });
+
+      // 팝업 닫기 버튼
       $(".btn_right, .btn_left").click(function () {
         $("#popup").fadeOut();
       });
@@ -62,8 +72,8 @@
         <tr>
           <td>
             <div class="date"><span>03.22</span> <span class="day">Mon</span></div>
-            <div class="text">거의 다 끝나간다 <input type="checkbox" id="checkbox1" /><label for="checkbox1"></label></div><!--<input type="checkbox" id="checkbox1" /><label for="checkbox1"></label>-->
-            <div class="text">끝나버렸다...... <input type="checkbox" id="checkbox1" /><label for="checkbox1"></label></div><!--<input type="checkbox" id="checkbox1" /><label for="checkbox1"></label>-->
+            <div class="text">거의 다 끝나간다 <span class="eventPrevent"><input type="checkbox" id="checkbox_mon_01" name="mon_01"/><label for="checkbox_mon_01"></label></span></div><!--<input type="checkbox" id="checkbox1" /><label for="checkbox1"></label>-->
+            <div class="text">끝나버렸다...... <span class="eventPrevent"><input type="checkbox" id="checkbox_mon_02" name="mon_02"/><label for="checkbox_mon_02"></label></span></div><!--<input type="checkbox" id="checkbox1" /><label for="checkbox1"></label>-->
             <div class="text"></div>
             <div class="text"></div>
             <div class="text"></div>

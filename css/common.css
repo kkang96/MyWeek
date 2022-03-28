@@ -1,5 +1,89 @@
-body {
-  overflow: hidden;
-  touch-action: none;
+
+
+/* main.html */
+#wrap { min-width:1440px; }
+#wrap div.header { display:flex; align-items:center; justify-content:space-between; margin:40px; }
+#wrap div.header .year { font-weight:700; font-size:40px; }
+#wrap div.header ul.month { display:inline-block;}
+#wrap div.header ul.month li { display:inline-block; width:48px; height:48px; margin-right:20px; border:1px solid #CCCCCC; border-radius:50px; color:#CCCCCC; font-size:20px; text-align:center; line-height:45px; cursor:pointer; }
+#wrap div.header ul.month li.on { border:1px solid #96B7FB; background:#96B7FB; color:#ffffff; }
+#wrap div.header .btn_today { width:120px; height:48px; color:#497DDF; border:2px solid #497DDF; border-radius:8px; font-size:16px; text-align:center; line-height:44px; cursor:pointer; 
+  -webkit-transition:all 0.4s; 
+  -moz-transition:all 0.4s;
+  transition:all 0.4s; }
+#wrap div.header .btn_today:hover{
+  background-color: #497DDF;
+  color: #ffffff;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+#wrap div.header img { cursor:pointer }
+#wrap div.header img.btn_next { margin-left:48px; }
+
+#wrap div.content { margin:0px 8px 40px 8px; }
+#wrap div.content table.weekly { width:100%; }
+#wrap div.content table.weekly tr td { width:25%; height:360px; padding:32px; }
+#wrap div.content table.weekly tr td .date, #wrap div.content table.weekly tr td .text { width:100%; height:50px; }
+#wrap div.content table.weekly tr td .date { padding:0px 16px; border-bottom:1px solid #000000; line-height:50px; }
+#wrap div.content table.weekly tr td .date span:first-child { font-size:24px; color:#4D4D4D; }
+#wrap div.content table.weekly tr td .date .day { float:right; font-size:20px; color:#4D4D4D }
+#wrap div.content table.weekly tr td .text { display:flex; align-items:center; justify-content:space-between; border:0px; padding:0px 8px; border-bottom:1px solid #CCCCCC; font-size:16px; line-height:50px; cursor:pointer; }
+#wrap div.content table.weekly tr td .text img { width:24px; } 
+#wrap div.content table.weekly tr td input[type="checkbox"] { display:none; }
+#wrap div.content table.weekly tr td input[type="checkbox"] + label:before {
+	content:""; position:absolute; left:0;
+	display:inline-block;
+	width:20px; height:20px;
+	background:url(../images/check_off.png) center center no-repeat;
+	background-size:100%;
+  z-index:1;
+}
+#wrap div.content table.weekly tr td input[type="checkbox"]:checked + label:before {
+	content:""; position:absolute; left:0;
+	display:inline-block;
+	width:20px; height:20px;
+	background:url(../images/check_on.png) center center no-repeat;
+	background-size:100%;
+  z-index:1;
 }
 
+#wrap div.content table.weekly tr td .date.on { background:#96B7FB;}
+#wrap div.content table.weekly tr td .date.on span{ color:#ffffff;}
+
+
+/* 팝업 */
+#popup { display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0,0,0,0.75); z-index:3; }
+#popup .popup_inner { position:fixed; top:0; bottom:0; left:0; right:0; margin:auto; width:480px; height:240px; background:#fff; z-index:4; text-align:center; }
+#popup .popup_inner_300 { height:300px; }
+#popup .popup_inner_400 { height:400px; }
+#popup .popup_inner .popup_header { padding:14px 24px; background:#F5F5F5; font-size:14px; text-align:left; }
+#popup .popup_inner .popup_header img.btn_delete { float:right; cursor:pointer; }
+#popup .popup_inner .popup_contents { padding: 0px 24px 24px 24px; text-align: right; }
+#popup .popup_inner .popup_contents input { width:100%; height:55px; padding:0px 5px; border:0px; border-bottom:1px solid #CCCCCC; }
+#popup .popup_inner .popup_contents input[type="checkbox"] { display:none; }
+#popup .popup_inner .popup_contents input[type="checkbox"] + label:before {
+	content:""; position:absolute; top:72px; right:36px;
+	display:inline-block;
+	width:20px; height:20px;
+	background:url(../images/check_off.png) center center no-repeat;
+	background-size:100%;
+}
+#popup .popup_inner .popup_contents input[type="checkbox"]:checked + label {  }
+#popup .popup_inner .popup_contents input[type="checkbox"]:checked + label:before {
+	content:""; position:absolute; top:72px; right:36px;
+	display:inline-block;
+	width:20px; height:20px;
+	background:url(../images/check_on.png) center center no-repeat;
+	background-size:100%;
+}
+#popup .popup_inner .popup_contents .icon_description { position:absolute; top:126px; left:27px; }
+#popup .popup_inner .popup_contents input.text_description { width:384px; }
+#popup .popup_inner .popup_contents input.text_description::placeholder { color:#CCCCCC; }
+
+
+#popup .popup_inner p { position:absolute; top:35%; left:50%; transform:translate(-50%,-50%); width:90%; font-size:1rem; }
+#popup .popup_inner .popup_btn { position:absolute; bottom:24px; left:0; right:0; margin-right:24px; font-size:0; text-align:right; }
+#popup .popup_inner .popup_btn span { display:inline-block; width:80px; font-size:14px; line-height:32px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
+#popup .popup_inner .popup_btn span + span { margin-left:10px; }
+#popup .popup_inner .popup_btn span.btn_left { background:#ffffff; border:1px solid #CCCCCC; color:#CCCCCC; }

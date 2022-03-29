@@ -13,7 +13,8 @@
 #onboarding .bottom .btn_login.kakao { margin-bottom:0px; background:#FFE812; }
 #onboarding .bottom .btn_login img { position:relative; left:-30px; vertical-align:middle; }
 #onboarding .bottom .btn_login label { display:inline-block; font-size:14px; text-align:left; }
-#onboarding .bottom label { display:inline-block; width:150px; height:48px; line-height:48px; }
+#onboarding .bottom label { display:inline-block; width:80%; height:48px; line-height:48px; }
+#onboarding .bottom .btn_login label { display:inline-block; width:150px; height:48px; line-height:48px; }
 #onboarding .bottom input#privacy + label { width:100%; border-bottom:1px solid #cccccc; }
 #onboarding .bottom input#privacy_01 + label,
 #onboarding .bottom input#privacy_02 + label { margin-left:22px }

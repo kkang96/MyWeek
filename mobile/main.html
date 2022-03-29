@@ -12,6 +12,7 @@
   <title>마이위크</title>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   <link href='../css/reset.css' rel='stylesheet'>
+  <link href='../css/common.css' rel='stylesheet'>
   <link href='../css/style_mobile.css' rel='stylesheet'>
   <script type='text/javascript'> 
     $(document).ready(function(){
@@ -19,6 +20,18 @@
       $('.text span.eventPrevent').on('click', function (event) {
         event.stopPropagation();
       });
+      
+      // 할일 입력 팝업 노출
+      $('.bottom p').click(function () {
+        // 클릭 한 날의 날짜 불러오기
+        $('#popup').fadeIn();
+      });
+
+      // 팝업 닫기 버튼
+      $('.btn_right, .btn_left, #popup').click(function () {
+        $('#popup').fadeOut();
+      });
+
     });
   </script>
 </head>
@@ -46,7 +59,7 @@
 
     <div class='content'>
       <div class="text">[TEST]<span class='eventPrevent'><input type='checkbox' id='checkbox_mon_01' name='mon_01' /><label for='checkbox_mon_01'></label></span></div>
-      <div class="text">[TEST]<span class='eventPrevent'><input type='checkbox' id='checkbox_mon_01' name='mon_01' /><label for='checkbox_mon_01'></label></span></div>
+      <div class="text">[TEST]<span class='eventPrevent'><input type='checkbox' id='checkbox_mon_02' name='mon_01' /><label for='checkbox_mon_02'></label></span></div>
       <div class="text"></div>
       <div class="text"></div>
       <div class="text"></div>
@@ -55,27 +68,26 @@
 
     <div class='bottom'>
       <p>새로운 내용을 입력해주세요.</p>
-      <div class='bottom_inner'>
-        <div class='bottom_header'>
-          <span class='bottom_date'>2022.03.25.Fri</span> 
-          <img src='../images/button_delete.png' class='btn_delete'>
-        </div>
-        <div class='bottom_content'>
-          <div class='con_01'>
-            <input type='text' /><input type='checkbox' id='bottom_check' name='bottom_check' /><label for='bottom_check'></label>
-          </div>
-          <div class='con_02'>
-            <img src='../images/description.png' class='icon_description'>
-            <input type='text' class='text_description' placeholder='설명추가(최대 200자)' />
-          </div>
-          <div class='bottom_btn'>
-            <span class='btn_left'>취소</span>
-            <span class='btn_right'>저장</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
+  <div id='popup' class='mobile'>
+    <!-- 팝업 -->
+    <div class='popup_inner'>
+      <div class='popup_header'>
+        <span class='popup_date'>2022.03.25.Fri</span>
+        <img src='../images/button_delete.png' class='btn_delete'>
+      </div>
+      <div class='popup_contents'>
+        <input type='text' /><input type='checkbox' id='checkbox2' name='popup_check' /><label for='checkbox2'></label>
+        <img src='../images/description.png' class='icon_description'><input type='text' class='text_description'
+          placeholder='설명추가(최대 200자)' />
+      </div>
+      <div class='popup_btn'>
+        <span class='btn_left'>취소</span>
+        <span class='btn_right'>저장</span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

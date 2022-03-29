@@ -21,17 +21,30 @@
         event.stopPropagation();
       });
       
+      // 요일 선택
+      $('.week div').on('click', function(){
+        $('.week div').removeClass('on');
+        $(this).addClass('on');
+      })
+
       // 할일 입력 팝업 노출
-      $('.bottom p').click(function () {
+      $('.text').click(function () {
         // 클릭 한 날의 날짜 불러오기
-        $('#popup').fadeIn();
+        if ($(this).text().length > 0) {
+
+        } else {
+          var yymm = $('.yymm').text();
+          var date = $('.week div.on p').text();
+          var day = $('.week div.on p').attr('class');
+          $('.popup_date').text(yymm + '.' + date + '.' + day);
+          $('#popup').fadeIn();
+        }
       });
 
       // 팝업 닫기 버튼
       $('.btn_right, .btn_left, #popup').click(function () {
         $('#popup').fadeOut();
       });
-
     });
   </script>
 </head>
@@ -47,23 +60,23 @@
         <img src='../images/button_next.png' class='btn_next'>
       </div>
       <div class='week'>
-        <div class='on'>M<p class='day_mon'>21</p></div>
-        <div>T<p class='day_tue'>22</p></div>
-        <div>W<p class='day_wed'>23</p></div>
-        <div>T<p class='day_thu'>24</p></div>
-        <div>F<p class='day_fri'>25</p></div>
-        <div>S<p class='day_sat'>26</p></div>
-        <div>S<p class='day_sun'>27</p></div>
+        <div>M<p class='mon'>21</p></div>
+        <div>T<p class='tue'>22</p></div>
+        <div>W<p class='wed'>23</p></div>
+        <div>T<p class='thu'>24</p></div>
+        <div>F<p class='fri'>25</p></div>
+        <div>S<p class='sat'>26</p></div>
+        <div>S<p class='sun'>27</p></div>
       </div>
     </div>
 
     <div class='content'>
-      <div class="text">[TEST]<span class='eventPrevent'><input type='checkbox' id='checkbox_mon_01' name='mon_01' /><label for='checkbox_mon_01'></label></span></div>
-      <div class="text">[TEST]<span class='eventPrevent'><input type='checkbox' id='checkbox_mon_02' name='mon_01' /><label for='checkbox_mon_02'></label></span></div>
-      <div class="text"></div>
-      <div class="text"></div>
-      <div class="text"></div>
-      <div class="text"></div>  
+      <div class='text'>[TEST]<span class='eventPrevent'><input type='checkbox' id='checkbox_mon_01' name='mon_01' /><label for='checkbox_mon_01'></label></span></div>
+      <div class='text'>[TEST]<span class='eventPrevent'><input type='checkbox' id='checkbox_mon_02' name='mon_01' /><label for='checkbox_mon_02'></label></span></div>
+      <div class='text'></div>
+      <div class='text'></div>
+      <div class='text'></div>
+      <div class='text'></div>  
     </div>
 
     <div class='bottom'>

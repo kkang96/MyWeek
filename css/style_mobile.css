@@ -1,0 +1,119 @@
+/* 모바일 CSS */
+/* Onboarding 페이지 */
+#onboarding { height:100vh; overflow:hidden; }
+#onboarding .contents { padding:24px; }
+#onboarding .contents div { margin-top:40%; font-size:20px; }
+#onboarding .contents div img { width:68px; height:40px; margin-bottom:16px; }
+#onboarding .contents div p { margin-top:8px; font-size:14px; }
+
+#onboarding .bottom { position:absolute; bottom:64px; width:100%; padding:16px; }
+#onboarding .bottom .btn_login { width:100%; height:48px; margin-bottom:16px; border-radius:4px; line-height:48px; text-align:center; }
+#onboarding .bottom .btn_login.google { background:#F9F9F9 }
+#onboarding .bottom .btn_login.naver { background:#57BE6A; color:#FFFFFF }
+#onboarding .bottom .btn_login.kakao { margin-bottom:0px; background:#FFE812; }
+#onboarding .bottom .btn_login img { position:relative; left:-30px; vertical-align:middle; }
+#onboarding .bottom .btn_login label { display:inline-block; font-size:14px; text-align:left; }
+#onboarding .bottom label { display:inline-block; width:80%; height:48px; line-height:48px; }
+#onboarding .bottom input#privacy + label { width:100%; border-bottom:1px solid #cccccc; }
+#onboarding .bottom input#privacy_01 + label,
+#onboarding .bottom input#privacy_02 + label { margin-left:22px }
+#onboarding .bottom input[type="checkbox"] { display:none; }
+#onboarding .bottom input[type="checkbox"] + label:before {
+  content:""; 
+  display:inline-block;
+  position:relative;
+  top:4px;
+  width:20px; height:20px;
+  margin-right:18px;
+  background:url(../images/check_off.png) center center no-repeat;
+  background-size:100%;
+  z-index:1;
+}
+#onboarding .bottom input[type="checkbox"]:checked + label:before {
+  content:"";
+  display:inline-block;
+  position:relative;
+  top:4px;
+  width:20px; height:20px;
+  margin-right:18px;
+  background:url(../images/check_on.png) center center no-repeat;
+  background-size:100%;
+  z-index:1;
+}
+#onboarding .bottom img { position:relative; top:15px; left:15px; width:8px; }
+#onboarding .bottom .btn_next.on { background:#497DDF; }
+#onboarding .bottom .skip { display:block; position:absolute; bottom:-16px; left:50%; transform:translate(-50%, 0%); color:#4D4D4D; text-decoration:underline; cursor:pointer; }
+
+/* 메인 */
+
+#wrap { display:flex; flex-flow:column; align-items:stretch; height:100vh; }
+
+#wrap .header { display:flex; flex:0 1 auto; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:18px; } 
+#wrap .header .header_box img { width:29px; margin-right:2px; vertical-align: middle;  }
+#wrap .header .header_box .yymm { font-size:20px; font-weight:bold; vertical-align: middle; }
+#wrap .header .header_btn { float:right;}
+#wrap .header .header_btn img { width:20px; vertical-align:middle; }
+#wrap .header .header_btn img:last-child { margin-left:36px; }
+#wrap .header .week { display:flex; align-items:center; width:100%; justify-content:space-between; margin-top:16px; }
+#wrap .header .week div { display:inline-block; padding:8px 4px 4px 4px; font-size:14px; text-align:center;}
+#wrap .header .week div.on { background:#96B7FB; color:#ffffff; border-radius: 45px; }
+#wrap .header .week div.on p { background:#ffffff; color:#000000; border-radius: 45px; font-weight:bold; }
+#wrap .header .week div p { width:36px; height:36px; padding:8px; margin-top:8px; }
+
+#wrap .content { padding: 0px 16px; flex:1 1 auto;  height:50vh; }
+#wrap .content .text { display:flex;align-items:center; justify-content:space-between; padding:0px 8px; width:100%; height:16%; border-bottom:1px solid #CCCCCC; }
+#wrap .content .text:first-child { border-top:1px solid #4D4D4D; }
+#wrap .content input[type="checkbox"] { display:none; }
+#wrap .content input[type="checkbox"] + label:before {
+  content:""; 
+  position:relative;
+  float:right;
+  width:20px; height:20px;
+  background:url(../images/check_off.png) center center no-repeat;
+  background-size:100%;
+  z-index:1;
+}
+#wrap .content input[type="checkbox"]:checked + label:before {
+  content:"";
+  position:relative;
+  float:right;
+  width:20px; height:20px;
+  background:url(../images/check_on.png) center center no-repeat;
+  background-size:100%;
+  z-index:1;
+} 
+
+#wrap .bottom { background: #F5F5F5; flex:0 1 40vh; }
+#wrap .bottom .bottom_inner { height:100%; }
+#wrap .bottom p { display:none; /*display:inline-block;*/ position:relative; top:50%; left:50%; transform:translateX(-50%) translateY(-50%); font-size:14px }
+#wrap .bottom .bottom_header { display:flex; align-items:center; justify-content:space-between; padding: 0px 16px; height:20%; background:#F5F5F5; font-size:14px; }
+#wrap .bottom .bottom_header img.btn_delete { float:right; cursor:pointer; }
+#wrap .bottom .bottom_content { padding:3% 24px; height:80%; background:#ffffff; text-align:right; }
+#wrap .bottom .bottom_content input { width:90%; height:50px; padding:0px 5px; border:0px; border-bottom:1px solid #CCCCCC; }
+#wrap .bottom .bottom_content .con_01 {text-align:left;}
+#wrap .bottom .bottom_content .con_01 input[type="checkbox"] { display:none; }
+#wrap .bottom .bottom_content .con_01 input[type="checkbox"] + label:before {
+  content:"";
+  display:inline-block; position:relative; top:5px; left:10px;
+  width:20px; height:20px;
+  background:url(../images/check_off.png) center center no-repeat;
+  background-size:100%;
+}
+#wrap .bottom .bottom_content .con_01 input[type="checkbox"]:checked + label:before {
+  content:""; 
+  display:inline-block; position:relative; top:5px; left:10px;
+  width:20px; height:20px;
+  background:url(../images/check_on.png) center center no-repeat;
+  background-size:100%;
+}
+#wrap .bottom .bottom_content .con_02 .icon_description { position:relative; top:20px; left:-25px; }
+#wrap .bottom .bottom_content .con_02 input.text_description { width:85%; }
+#wrap .bottom .bottom_content .con_02 input.text_description::placeholder { color:#CCCCCC; }
+#wrap .bottom .bottom_content .bottom_btn { position:absolute; bottom:16px; left:0; right:0; margin-right:24px; font-size:0; text-align:right; }
+#wrap .bottom .bottom_content .bottom_btn span { display:inline-block; width:80px; font-size:14px; line-height:32px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
+#wrap .bottom .bottom_content .bottom_btn span + span { margin-left:10px; }
+#wrap .bottom .bottom_content .bottom_btn span.btn_left { background:#ffffff; border:1px solid #CCCCCC; color:#CCCCCC; }   
+
+/* 공용 버튼 */
+.btn_p_100_blue { display:inline-block; width:100%; height:40px; margin-top:12px; background:#497DDF; color:#FFFFFF; border-radius:4px; text-align:center; line-height:40px; cursor:pointer; }
+.btn_p_100_gray { display:inline-block; width:100%; height:40px; margin-top:12px; background:#CCCCCC; color:#FFFFFF; border-radius:4px; text-align:center; line-height:40px; cursor:pointer;}

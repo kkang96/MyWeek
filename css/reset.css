@@ -18,7 +18,7 @@ dl,ul,ol,menu,li {list-style:none;}
 blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,q:before, q:after {content:''; content:none;}
 button {border:0 none; background-color:transparent; cursor:pointer;}
-body,th,td,input,select,textarea,button {font-size:14px; line-height:1.6; font-family:'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif; color:#1b1b1b;} 
+body,th,td,input,select,textarea,button,p {font-size:14px; line-height:1.6; font-family:'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif; color:#1b1b1b;} 
 a:link,a:active,a:visited{color:#7d7d7d; text-decoration:none; border:0px;}
 a:hover,a:focus{color:#1b1b1b; text-decoration:none}
 table { border-collapse:collapse; border-spacing:0;}

@@ -34,49 +34,17 @@
           $('.btn_next').removeClass('on');
         }
       });
+
+      $('.btn_next').on('click', function () {
+        if ($(this).hasClass('on')) {
+          location.href = 'onboarding_03.html';
+        }
+      });
     });
   </script>
-  <style>
-    #wrap { height:100vh; overflow:hidden; }
-    #wrap .contents { height:65vh; padding:24px; }
-    #wrap .contents div { margin-top:35%; font-size:20px; }
-    #wrap .contents div img { width:68px; height:40px; margin-bottom:16px; }
-    #wrap .contents div p { margin-top:8px; font-size:14px; }
-    #wrap .bottom { width:100%; height:35vh; padding:16px; }
-    #wrap .bottom label { display:inline-block; width:90%; height:48px; line-height:48px; }
-    #wrap .bottom input#privacy + label { width:100%; border-bottom:1px solid #cccccc; }
-    #wrap .bottom input#privacy_01 + label,
-    #wrap .bottom input#privacy_02 + label { margin-left:22px }
-    #wrap .bottom input[type="checkbox"] { display:none; }
-    #wrap .bottom input[type="checkbox"] + label:before {
-      content:""; 
-      display:inline-block;
-      position:relative;
-      top:4px;
-      width:20px; height:20px;
-      margin-right:18px;
-      background:url(../images/check_off.png) center center no-repeat;
-      background-size:100%;
-      z-index:1;
-    }
-    #wrap .bottom input[type="checkbox"]:checked + label:before {
-      content:"";
-      display:inline-block;
-      position:relative;
-      top:4px;
-      width:20px; height:20px;
-      margin-right:18px;
-      background:url(../images/check_on.png) center center no-repeat;
-      background-size:100%;
-      z-index:1;
-    }
-    #wrap .bottom img { position:relative; top:15px; left:-8px; width:8px; }
-    #wrap .bottom .btn_next { display:inline-block; width:100%; height:40px; margin-top:12px; background:#CCCCCC; color:#FFFFFF; border-radius:4px; text-align:center; line-height:40px; cursor:pointer; }
-    #wrap .bottom .btn_next.on { background:#497DDF; }
-  </style>
 </head>
 <body>
-  <div id='wrap'>
+  <div id='onboarding'>
     <div class='contents'>
       <div>
         <img src='../images/logo.png'><br>
@@ -89,7 +57,7 @@
       <input type='checkbox' id='privacy' name='privacy' value='privacy_all'/><label for='privacy'>약관 전체동의</label>
       <input type='checkbox' id='privacy_01' name='privacy' value='privacy_01'/><label for='privacy_01'>서비스 이용약관 (필수)</label><img src='../images/button_detail.png'>
       <input type='checkbox' id='privacy_02' name='privacy' value='privacy_01'/><label for='privacy_02'>개인정보 수집 및 이용동의 (필수)</label><img src='../images/button_detail.png'>
-      <span class='btn_next'>다음</span>
+      <span class='btn_p_100_gray btn_next'>다음</span>
     </div>
   </div>
 </body>

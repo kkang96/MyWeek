@@ -13,10 +13,10 @@
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   <link href='../css/reset.css' rel='stylesheet'>
   <link href='../css/style_mobile.css' rel='stylesheet'>
-  <script type='text/javascript'> 
-    $(document).ready(function(){
-      $('.btn_login').on('click', function () {
-        location.href = 'onboarding_02.html';
+  <script type='text/javascript'>
+    $(document).ready(function () {
+      $('.btn_link, .skip').on('click', function(){
+        location.href = 'main.html';
       });
     });
   </script>
@@ -26,14 +26,14 @@
     <div class='contents'>
       <div>
         <img src='../images/logo.png'><br>
-        간편하게 로그인하고, <br>
-        마이위크를 이용해보세요.
+        구글 캘린더 연동 <br>
+        <p>마이위크에서 구글 캘린더 연동<br/>
+        서비스를 제공하고 있습니다.</p>
       </div>
     </div>
     <div class='bottom'>
-      <div class='btn_login google'><img src='../images/login_google.png'><label for=''>구글계정으로 로그인</label></div>
-      <div class='btn_login naver'><img src='../images/login_naver.png'><label for=''>네이버계정으로 로그인</label></div>
-      <div class='btn_login kakao'><img src='../images/login_kakao.png'><label for=''>카카오계정으로 로그인</label></div>
+      <span class='btn_p_100_blue btn_link'>연동하기</span>
+      <span class='skip'>건너뛰기</span>
     </div>
   </div>
 </body>

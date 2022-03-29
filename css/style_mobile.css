@@ -40,7 +40,7 @@
   background-size:100%;
   z-index:1;
 }
-#onboarding .bottom img { position:relative; top:15px; left:15px; width:8px; }
+#onboarding .bottom img.btn_detail { position:relative; top:15px; left:15px; width:8px; }
 #onboarding .bottom .btn_next.on { background:#497DDF; }
 #onboarding .bottom .skip { display:block; position:absolute; bottom:-16px; left:50%; transform:translate(-50%, 0%); color:#4D4D4D; text-decoration:underline; cursor:pointer; }
 

@@ -16,6 +16,11 @@
   <link href='../css/style_mobile.css' rel='stylesheet'>
   <script type='text/javascript'> 
     $(document).ready(function(){
+      // 프로필 클릭 시 설정 화면으로 이동
+      $('.setting').on('click', function(){
+        location.href='setting.html';
+      });
+
       // div.text와 input[type=checkbox] 중복 이벤트 발생 막기
       $('.text span.eventPrevent').on('click', function (event) {
         event.stopPropagation();
@@ -25,13 +30,14 @@
       $('.week div').on('click', function(){
         $('.week div').removeClass('on');
         $(this).addClass('on');
-      })
+      });
 
       // 할일 입력 팝업 노출
-      $('.text').click(function () {
+      $('.text').on('click', function () {
         // 클릭 한 날의 날짜 불러오기
         if ($(this).text().length > 0) {
-
+          $('.bottom > p').hide();
+          $('.bottom_upd').show();
         } else {
           var yymm = $('.yymm').text();
           var date = $('.week div.on p').text();
@@ -41,9 +47,25 @@
         }
       });
 
+      $('.btn_update').on('click', function(){
+        var yymm = $('.yymm').text();
+        var date = $('.week div.on p').text();
+        var day = $('.week div.on p').attr('class');
+        $('.popup_date').text(yymm + '.' + date + '.' + day);
+        $('#popup').fadeIn();
+      });
+
       // 팝업 닫기 버튼
-      $('.btn_right, .btn_left, #popup').click(function () {
+      $('.btn_right, .btn_left').on('click', function () {
         $('#popup').fadeOut();
+      });
+      
+      // 팝업 외부영역 클릭 시 팝업 닫기
+      $(document).mouseup(function(e){
+        var popup = $('#popup');
+        if(popup.has(e.target).length === 0) {
+          $('#popup').fadeOut();
+        }
       });
     });
   </script>
@@ -52,7 +74,7 @@
   <div id='wrap'>
     <div class='header'>
       <div class='header_box'>
-        <img src='../images/profile.png'>
+        <img src='../images/profile.png' class='setting'>
         <span class='yymm'>2022.03</span>
       </div>
       <div class='header_btn'>
@@ -81,6 +103,12 @@
 
     <div class='bottom'>
       <p>새로운 내용을 입력해주세요.</p>
+      <div class='bottom_upd'>
+        <div class='bottom_desc'>
+          글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글
+        </div>
+        <span class='btn_update'>수정</span>
+      </div>  
     </div>
   </div>
 
@@ -93,8 +121,8 @@
       </div>
       <div class='popup_contents'>
         <input type='text' /><input type='checkbox' id='checkbox2' name='popup_check' /><label for='checkbox2'></label>
-        <img src='../images/description.png' class='icon_description'><input type='text' class='text_description'
-          placeholder='설명추가(최대 200자)' />
+        <img src='../images/description.png' class='icon_description'>
+        <input type='text' class='text_description' maxlength='100' placeholder='설명추가(최대 50자)' />
       </div>
       <div class='popup_btn'>
         <span class='btn_left'>취소</span>

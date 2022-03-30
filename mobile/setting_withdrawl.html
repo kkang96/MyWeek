@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport'
+    content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta property='og:url' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='./images/thumbnail.png' />
+  <meta property='og:title' content='마이위크' />
+  <meta property='og:description' />
+  <title>마이위크</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <link href='../css/reset.css' rel='stylesheet'>
+  <link href='../css/common.css' rel='stylesheet'>
+  <link href='../css/style_mobile.css' rel='stylesheet'>
+  <script type='text/javascript'>
+    $(document).ready(function () {
+      // back 버튼 클릭시 main 화면으로 이동
+      $('.btn_back').on('click', function () {
+        location.href = 'setting.html';
+      })
+    });
+  </script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id='wrap' class='setting'>
+    <div class='header'>
+      <img src='../images/button_back.png' class='btn_back'>
+      <span class='title'>회원탈퇴</span>
+    </div>
+    <div class='content'>
+      <div></div>
+    </div>
+  </div>
+</body>
+
+</html>

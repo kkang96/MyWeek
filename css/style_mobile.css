@@ -50,6 +50,7 @@
 #wrap { display:flex; flex-flow:column; align-items:stretch; height:100vh; }
 
 #wrap .header { display:flex; flex:0 1 auto; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:18px; } 
+#wrap .header img { cursor:pointer; }
 #wrap .header .header_box img { width:29px; margin-right:2px; vertical-align: middle;  }
 #wrap .header .header_box .yymm { font-size:20px; font-weight:bold; vertical-align: middle; }
 #wrap .header .header_btn { float:right;}
@@ -86,6 +87,34 @@
 
 #wrap .bottom { flex:0 1 30vh; margin-top:20px; background:#F5F5F5;  }
 #wrap .bottom p { display:inline-block; position:relative; top:50%; left:50%; transform:translateX(-50%) translateY(-50%); font-size:14px }
+#wrap .bottom .bottom_upd { display:none; padding:25px; height:100%; } 
+#wrap .bottom .bottom_upd .bottom_desc { height:70%; overflow:auto; font-size:14px; line-height:3.5; }
+#wrap .bottom .bottom_upd .btn_update { display:inline-block; position:absolute; right:24px; bottom:24px; width:100px; height:40px; font-size:14px; line-height:40px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
+
+
+/* 설정페이지 */
+
+#wrap.setting .header { display:inline; text-align:center; }
+#wrap.setting .header img { position:absolute; top:24px; left:24px; }
+#wrap.setting .header .title { font-size:16px; }
+#wrap.setting .content { padding:0px; background:#E5E5E5; }
+#wrap.setting .content div { padding:12px 16px; background:#FFFFFF; font-size:14px; }
+#wrap.setting .content div img { cursor:pointer; }
+#wrap.setting .content div.google_calendar, #wrap.setting .content div.terms , #wrap.setting .content div.privacy { display:flex; align-items:center; justify-content:space-between; }
+#wrap.setting .content div:first-child, #wrap.setting .content div.google_calendar, #wrap.setting .content div.alarm, #wrap.setting .content div.terms { margin-top:8px; }
+#wrap.setting .content div.version span.ver_info { float:right; color:#497DDF; } 
+#wrap.setting .content div.withdrawal { color:#4D4D4D; }
+#wrap.setting .content div.logout { padding:0; margin-top:40px; background:none; color:#4D4D4D; text-align:center; text-decoration:underline; cursor:pointer; }
+/* 체크박스 슬라이더*/
+#wrap.setting .content div.push_alarm { padding-left:32px; }
+#wrap.setting .content div.push_alarm .switch { position:relative; float:right; width:48px; height:24px; vertical-align:middle; }
+#wrap.setting .content div.push_alarm .switch input { opacity:0; width:0; height:0; }
+#wrap.setting .content div.push_alarm .slider { position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#CCCCCC;  border-radius: 34px; -webkit-transition:.4s; transition:.4s; }
+#wrap.setting .content div.push_alarm .slider:before { position:absolute; content:""; height:20px; width:20px; left:2px; bottom:2px; background-color:#FFFFFF; border-radius: 50%; -webkit-transition:.4s; transition:.4s; }
+#wrap.setting .content div.push_alarm input:checked + .slider { background-color:#497DDF; }
+#wrap.setting .content div.push_alarm input:focus + .slider { box-shadow:0 0 1px #497DDF; }
+#wrap.setting .content div.push_alarm input:checked + .slider:before { -webkit-transform:translateX(24px); -ms-transform:translateX(24px); transform:translateX(24px); }
+
 
 /* 공용 버튼 */
 .btn_p_100_blue { display:inline-block; width:100%; height:40px; margin-top:12px; background:#497DDF; color:#FFFFFF; border-radius:4px; text-align:center; line-height:40px; cursor:pointer; }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport'
+    content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta property='og:url' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='./images/thumbnail.png' />
+  <meta property='og:title' content='마이위크' />
+  <meta property='og:description' />
+  <title>마이위크</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <link href='../css/reset.css' rel='stylesheet'>
+  <link href='../css/common.css' rel='stylesheet'>
+  <link href='../css/style_mobile.css' rel='stylesheet'>
+  <script type='text/javascript'>
+    $(document).ready(function () {
+      // back 버튼 클릭시 main 화면으로 이동
+      $('.btn_back').on('click', function () {
+        location.href = 'main.html';
+      });
+      // 회원탈퇴 페이지로 이동
+      $('.withdrawal').on('click', function () {
+        location.href = 'setting_withdrawl.html'
+      });
+    });
+  </script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id='wrap' class='setting'>
+    <div class='header'>
+      <img src='../images/button_back.png' class='btn_back'>
+      <span class='title'>설정</span>
+    </div>
+    <div class='content'>
+      <div class='account'>연동된 계정:[구글/카카오/네이버]</div>
+      <div class='google_calendar'>구글 캘린더 연동하기<img src='../images/button_detail.png' class=''></div>
+      <div class='alarm'>알림설정</div>
+      <div class='push_alarm'>
+        앱 푸시 알림
+        <label class='switch'>
+          <input type='checkbox'>
+          <span class='slider'></span>
+        </label>
+      </div>
+      <div class='terms'>이용약관<img src='../images/button_detail.png' class=''></div>
+      <div class='privacy'>개인정보 처리방침<img src='../images/button_detail.png' class=''></div>
+      <div class='version'>버전정보<span class='ver_info'>1.1.0</span></div>
+      <div class='withdrawal'>회원탈퇴</div>
+      <div class='logout'>로그아웃</div>
+    </div>
+  </div>
+</body>
+
+</html>

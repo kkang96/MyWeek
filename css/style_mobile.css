@@ -100,6 +100,8 @@
 #wrap.setting .content { padding:0px; background:#E5E5E5; }
 #wrap.setting .content div { padding:12px 16px; background:#FFFFFF; font-size:14px; }
 #wrap.setting .content div img { cursor:pointer; }
+#wrap.setting .content div img.logo { margin-top:12px; width:68px; height:40px; cursor:auto; }
+#wrap.setting .content div p { margin-top:8px; }
 #wrap.setting .content div.google_calendar, #wrap.setting .content div.terms , #wrap.setting .content div.privacy { display:flex; align-items:center; justify-content:space-between; }
 #wrap.setting .content div:first-child, #wrap.setting .content div.google_calendar, #wrap.setting .content div.alarm, #wrap.setting .content div.terms { margin-top:8px; }
 #wrap.setting .content div.version span.ver_info { float:right; color:#497DDF; } 
@@ -114,7 +116,10 @@
 #wrap.setting .content div.push_alarm input:checked + .slider { background-color:#497DDF; }
 #wrap.setting .content div.push_alarm input:focus + .slider { box-shadow:0 0 1px #497DDF; }
 #wrap.setting .content div.push_alarm input:checked + .slider:before { -webkit-transform:translateX(24px); -ms-transform:translateX(24px); transform:translateX(24px); }
-
+#wrap.setting .content .btn_wrap { margin-top:34px; text-align:center; }
+#wrap.setting .content .btn_wrap span { display:inline-block; width:120px; height:40px; font-size:14px; line-height:40px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
+#wrap.setting .content .btn_wrap span + span { margin-left:10px; }
+#wrap.setting .content .btn_wrap span.btn_left { background:#ffffff; border:1px solid #CCCCCC; color:#CCCCCC; }
 
 /* 공용 버튼 */
 .btn_p_100_blue { display:inline-block; width:100%; height:40px; margin-top:12px; background:#497DDF; color:#FFFFFF; border-radius:4px; text-align:center; line-height:40px; cursor:pointer; }

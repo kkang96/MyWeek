@@ -19,9 +19,16 @@
   <script type='text/javascript'>
     $(document).ready(function () {
       // back 버튼 클릭시 main 화면으로 이동
-      $('.btn_back').on('click', function () {
+      $('.btn_back, #close').on('click', function () {
         location.href = 'setting.html';
-      })
+      });
+      // 탈퇴 시 시스템 팝업 발생
+      $('#withdrawl').on('click', function () {
+        $('#popup').fadeIn();
+      });
+      $('.close').on('click', function () {
+        location.href='onboarding_01.html'
+      });
     });
   </script>
   <style>
@@ -35,7 +42,36 @@
       <span class='title'>회원탈퇴</span>
     </div>
     <div class='content'>
-      <div></div>
+      <div>
+        <img src='../images/logo.png' class='logo'>
+        <p>
+          마이위크 서비스를 탈퇴하게 되면<br />
+          계정 정보 및 서비스 이용기록 등 모든 정보가 삭제됩니다.<br />
+          이전에 사용된 서비스 기록은 복구할 수 없으니<br />
+          신중한 선택하시길 바랍니다.<br />
+        </p>
+        <div class='btn_wrap'>
+          <span class='btn_left' id='close'>취소</span>
+          <span class='btn_right' id='withdrawl'>탈퇴</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id='popup' class='mobile'>
+    <!-- 팝업 -->
+    <div class='popup_inner'> 
+      <div class='popup_contents notice' style='padding-top:44px;'>
+        <div class='popup_subject'>회원탈퇴가 완료되었습니다.</div>
+        <p>
+        그동안 마이위크 서비스를 <br>
+        이용해 주셔서 감사합니다. <br>
+        보다 더 나은 서비스로 다시 찾아 뵙겠습니다.
+        </p>
+      </div>
+      <div class='popup_btn_full'>
+        <span class='close'>확인</span>
+      </div>
     </div>
   </div>
 </body>

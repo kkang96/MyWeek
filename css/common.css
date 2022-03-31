@@ -10,6 +10,8 @@
 #popup .popup_inner .popup_header { padding:14px 24px; background:#F5F5F5; font-size:14px; text-align:left; }
 #popup .popup_inner .popup_header img.btn_delete { float:right; cursor:pointer; }
 #popup .popup_inner .popup_contents { padding: 0px 24px 24px 24px; text-align: right; }
+#popup .popup_inner .popup_contents.notice { text-align:center; }
+#popup .popup_inner .popup_contents .popup_subject { padding-bottom:8px; font-size:17px; font-weight:bold; }
 #popup .popup_inner .popup_contents input { width:100%; height:55px; padding:0px 5px; border:0px; border-bottom:1px solid #CCCCCC; }
 #popup .popup_inner .popup_contents input.text_subject { padding-right:45px; }
 #popup .popup_inner .popup_contents input[type="checkbox"] { display:none; }
@@ -32,12 +34,12 @@
 #popup .popup_inner .popup_contents input.text_description { width:384px; }
 #popup .popup_inner .popup_contents input.text_description::placeholder { color:#CCCCCC; }
 
-
-#popup .popup_inner p { position:absolute; top:35%; left:50%; transform:translate(-50%,-50%); width:90%; font-size:1rem; }
 #popup .popup_inner .popup_btn { position:absolute; bottom:24px; left:0; right:0; margin-right:24px; font-size:0; text-align:right; }
 #popup .popup_inner .popup_btn span { display:inline-block; width:100px; height:40px; font-size:14px; line-height:40px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
 #popup .popup_inner .popup_btn span + span { margin-left:10px; }
 #popup .popup_inner .popup_btn span.btn_left { background:#ffffff; border:1px solid #CCCCCC; color:#CCCCCC; }
+#popup .popup_inner .popup_btn_full { position:absolute; bottom:24px; left:0; right:0; padding:0px 16px; font-size:0; text-align:center;  }
+#popup .popup_inner .popup_btn_full span { display:inline-block; width:100%; height:40px; font-size:14px; line-height:40px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
 
 #popup.mobile .popup_inner { top:auto; width:100%; height:250px; }
 #popup.mobile .popup_inner .popup_contents input.text_description { width:90%; }

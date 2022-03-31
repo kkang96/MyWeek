@@ -16,6 +16,10 @@
   <link href='../css/style_pc.css' rel='stylesheet'>
   <script type='text/javascript'> 
     $(document).ready(function(){
+      $('.popup_login').fadeIn();
+      $('.btn_login').on('click', function () {
+        $('.popup_login').fadeOut();
+      });
 
       // 월 정렬 
       let monthList = '';
@@ -43,7 +47,7 @@
         $(this).parent('td').find('.date').addClass('on');
 
         $('.popup_date').text(full_date);
-        $('#popup').fadeIn();
+        $('.add_todo').fadeIn();
       });
 
       // div.text와 input[type=checkbox] 중복 이벤트 발생 막기
@@ -56,6 +60,30 @@
         $('#popup').fadeOut();
       });
 
+      $('.btn_profile').on('click', function () {
+        $('.popup_setting').fadeIn();
+      });
+
+      $('.withdrawal').on('click',function(){
+        $('.popup_setting').fadeOut();
+        $('.popup_withdrawl_01').fadeIn();
+      });
+
+
+      $('.popup_withdrawl_01 .btn_left').on('click', function () { 
+        $('.popup_withdrawl_01').fadeOut();
+        $('.popup_setting').fadeIn();
+      });
+
+      $('.popup_withdrawl_01 .btn_right').on('click', function () { 
+        $('.popup_withdrawl_01').fadeOut();
+        $('.popup_withdrawl_02').fadeIn();
+      });
+
+      $('.popup_withdrawl_02 .btn_right').on('click', function () {
+        location.reload();
+      });
+
     });
   </script>
 </head>
@@ -63,7 +91,7 @@
   <div id='wrap'>
     <div class='header'>
       <!-- header 영역 -->
-      <div class='profile'><img src='../images/profile.png'></div>
+      <div class='profile'><img src='../images/profile.png' class='btn_profile'></div>
       <div class='year'>2022</div>
       <ul class='month'></ul>
       <span class='btn_today'>Today</span>
@@ -155,7 +183,7 @@
     </div>
   </div>
 
-  <div id='popup'>
+  <div id='popup' class='add_todo'>
     <!-- 팝업 -->
     <div class='popup_inner'>
       <div class='popup_header'>
@@ -172,5 +200,80 @@
       </div>
     </div>
   </div>
+
+
+  <div id='popup' class='popup_login'>
+    <!-- 팝업 -->
+    <div class='popup_inner'>
+      <img src='../images/logo.png' class='logo'>
+      <p>
+        간편하게 로그인하고,<br/>
+        마이위크를 이용해보세요.
+      </p>
+      <div class='login_btn_wrap'>
+        <div class='btn_login google'><img src='../images/login_google.png'><label for=''>구글계정으로 로그인</label></div>
+        <div class='btn_login naver'><img src='../images/login_naver.png'><label for=''>네이버계정으로 로그인</label></div>
+        <div class='btn_login kakao'><img src='../images/login_kakao.png'><label for=''>카카오계정으로 로그인</label></div>  
+      </div>
+      <p class='privacy_box'>
+        마이위크를(을) 계속 진행하기 위해 소셜계정에서 이메일 주소를 마이위크와(과) 공유합니다. <br/>
+        서비스를 사용하기 전에 마이위크의 <span>개인정보처리방침</span> 및 <span>서비스 약관</span>을 검토하세요.
+      </p>
+    </div>
+  </div>
+
+
+  <div id='popup' class='popup_setting'>
+    <!-- 팝업 -->
+    <div class='popup_inner'>
+      <div class='popup_header'>
+        <span class='title'>설정</span>
+      </div>
+      <div class='popup_content'>
+        <div class='account'>연동된 계정:[구글/카카오/네이버]</div>
+        <div class='google_calendar'>구글 캘린더 연동하기<img src='../images/button_detail.png' class=''></div>
+        <div class='terms'>이용약관<img src='../images/button_detail.png' class=''></div>
+        <div class='privacy'>개인정보 처리방침<img src='../images/button_detail.png' class=''></div>
+        <div class='withdrawal'>회원탈퇴</div>
+        <div class='logout'>로그아웃</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id='popup' class='popup_withdrawl_01'>
+    <!-- 팝업 -->
+    <div class='popup_inner'>
+      <img src='../images/logo.png' class='logo'>
+      <div class='title'>회원탈퇴</div>
+      <p>
+        마이위크 서비스를 탈퇴하게 되면 <br/>
+        계정 정보 및 서비스 이용기록 등 모든 정보가 삭제됩니다.<br/>
+        이전에 사용된 서비스 기록은 복구할 수 없으니  신중한 선택하시길 바랍니다.
+      </p>
+
+      <div class='withdrawl_btn_wrap'>
+        <span class='btn_left'>취소</span>
+        <span class='btn_right'>탈퇴</span>
+      </div>
+    </div>
+  </div>
+
+  <div id='popup' class='popup_withdrawl_02'>
+    <!-- 팝업 -->
+    <div class='popup_inner'>
+      <img src='../images/logo.png' class='logo'>
+      <div class='title'>회원탈퇴가 <span class='success'>완료</span>되었습니다. </div>
+      <p>
+        그동안 마이위크 서비스를 이용해 주셔서 감사합니다.<br/>
+        보다 더 나은 서비스로 다시 찾아 뵙겠습니다.
+      </p>
+
+      <div class='withdrawl_btn_wrap'>
+        <span class='btn_right'>확인</span>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

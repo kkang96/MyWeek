@@ -41,5 +41,48 @@
 #popup .popup_inner .popup_btn_full { position:absolute; bottom:24px; left:0; right:0; padding:0px 16px; font-size:0; text-align:center;  }
 #popup .popup_inner .popup_btn_full span { display:inline-block; width:100%; height:40px; font-size:14px; line-height:40px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
 
+#popup.popup_login .popup_inner { width:600px; height:504px; }
+#popup.popup_login .popup_inner img.logo { margin-top:72px; width:68px; height:40px; }
+#popup.popup_login .popup_inner p { margin-top:24px; font-size:20px; }
+#popup.popup_login .popup_inner .login_btn_wrap { margin-top:32px; width:100%; text-align:center; }
+#popup.popup_login .popup_inner .login_btn_wrap .btn_login { margin:auto; margin-bottom:16px; width:343px; height:48px; border-radius:4px; line-height:48px; cursor:pointer; }
+#popup.popup_login .popup_inner .login_btn_wrap .btn_login.google { background:#F9F9F9 }
+#popup.popup_login .popup_inner .login_btn_wrap .btn_login.naver { background:#57BE6A; color:#FFFFFF }
+#popup.popup_login .popup_inner .login_btn_wrap .btn_login.kakao { margin-bottom:0px; background:#FFE812; }
+#popup.popup_login .popup_inner .login_btn_wrap  img { position:relative; left:-30px; vertical-align:middle; }
+#popup.popup_login .popup_inner .login_btn_wrap  label { display:inline-block; font-size:14px; text-align:left; }
+#popup.popup_login .popup_inner p.privacy_box { margin-top:32px; font-size:12px; }
+#popup.popup_login .popup_inner p.privacy_box span { color:#497DDF; text-decoration:underline; cursor:pointer; }
+
+#popup.popup_setting .popup_inner { width:600px; height:504px; background:#F5F5F5; }
+#popup.popup_setting .popup_inner .popup_header { padding:0; height:40px; background:#FFFFFF; line-height:40px; text-align:center; }
+#popup.popup_setting .popup_inner .popup_content { text-align:left; }
+#popup.popup_setting .popup_inner .popup_content div { padding:0px 32px; height:40px; background:#FFFFFF; font-size:14px; line-height:40px; }
+#popup.popup_setting .popup_inner .popup_content div img { cursor:pointer; }
+#popup.popup_setting .popup_inner .popup_content div:first-child,
+#popup.popup_setting .popup_inner .popup_content div.google_calendar,
+#popup.popup_setting .popup_inner .popup_content div.terms { margin-top:8px; }
+#popup.popup_setting .popup_inner .popup_content div.google_calendar,
+#popup.popup_setting .popup_inner .popup_content div.terms , 
+#popup.popup_setting .popup_inner .popup_content div.privacy { display:flex; align-items:center; justify-content:space-between; }
+#popup.popup_setting .popup_inner .popup_content div.withdrawal { color:#4D4D4D; }
+#popup.popup_setting .popup_inner .popup_content div.logout { padding:0; margin-top:32px; background:none; color:#4D4D4D; text-align:center; text-decoration:underline; cursor:pointer; }
+
+#popup.popup_withdrawl_01 .popup_inner { width:600px; height:504px; }
+#popup.popup_withdrawl_01 .popup_inner img.logo { margin-top:72px; width:68px; height:40px; }
+#popup.popup_withdrawl_01 .popup_inner .title { margin:24px auto; font-size:20px; }
+#popup.popup_withdrawl_01 .popup_inner .withdrawl_btn_wrap { margin-top:44px; }
+#popup.popup_withdrawl_01 .popup_inner .withdrawl_btn_wrap span { display:inline-block; width:160px; height:48px; font-size:14px; line-height:48px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
+#popup.popup_withdrawl_01 .popup_inner .withdrawl_btn_wrap span + span { margin-left:10px; }
+#popup.popup_withdrawl_01 .popup_inner .withdrawl_btn_wrap span.btn_left { background:#ffffff; border:1px solid #CCCCCC; color:#CCCCCC; }
+
+#popup.popup_withdrawl_02 .popup_inner { width:600px; height:504px; }
+#popup.popup_withdrawl_02 .popup_inner img.logo { margin-top:108px; width:68px; height:40px; }
+#popup.popup_withdrawl_02 .popup_inner .title { margin:24px auto; font-size:20px; }
+#popup.popup_withdrawl_02 .popup_inner .title .success { color:#497DDF; }
+#popup.popup_withdrawl_02 .popup_inner .withdrawl_btn_wrap { margin-top:44px; }
+#popup.popup_withdrawl_02 .popup_inner .withdrawl_btn_wrap span { display:inline-block; width:336px; height:48px; font-size:14px; line-height:48px; border-radius:4px; background:#497DDF; color:#ffffff; text-align:center; cursor:pointer; }
+
+
 #popup.mobile .popup_inner { top:auto; width:100%; height:250px; }
 #popup.mobile .popup_inner .popup_contents input.text_description { width:90%; }

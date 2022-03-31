@@ -65,7 +65,7 @@
 #popup.popup_setting .popup_inner .popup_content div.google_calendar,
 #popup.popup_setting .popup_inner .popup_content div.terms , 
 #popup.popup_setting .popup_inner .popup_content div.privacy { display:flex; align-items:center; justify-content:space-between; }
-#popup.popup_setting .popup_inner .popup_content div.withdrawal { color:#4D4D4D; }
+#popup.popup_setting .popup_inner .popup_content div.withdrawal { color:#4D4D4D; cursor:pointer; }
 #popup.popup_setting .popup_inner .popup_content div.logout { padding:0; margin-top:32px; background:none; color:#4D4D4D; text-align:center; text-decoration:underline; cursor:pointer; }
 
 #popup.popup_withdrawl_01 .popup_inner { width:600px; height:504px; }

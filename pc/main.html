@@ -60,6 +60,14 @@
         $('#popup').fadeOut();
       });
 
+      // 팝업 외부영역 클릭 시 팝업 닫기
+      $(document).mouseup(function (e) {
+        var popup = $('.popup_setting');
+        if (popup.has(e.target).length === 0) {
+          $('.popup_setting').fadeOut();
+        }
+      });
+
       $('.btn_profile').on('click', function () {
         $('.popup_setting').fadeIn();
       });
